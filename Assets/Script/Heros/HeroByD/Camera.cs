@@ -6,7 +6,9 @@ public class Camera : MonoBehaviour
 {
     private Transform player;
     private float minX = 0; 
-    private float maxX = 50;
+    private float maxX = 130;
+    private float minY = -18;
+    private float maxY = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,11 @@ public class Camera : MonoBehaviour
                 vitri.x = 0;
             if(vitri.x > maxX)
                 vitri.x = maxX;
+            vitri.y = player.position.y;
+            if (vitri.y < minY)
+                vitri.y = 0;
+            if (vitri.y > maxY)
+                vitri.y = maxY;
             transform.position = vitri;
         }
     }

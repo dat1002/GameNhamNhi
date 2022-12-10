@@ -6,6 +6,7 @@ public class fire : MonoBehaviour
 {
     public float bulletspeed;
     Rigidbody2D myBody;
+    public GameObject fire01;
     private void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
@@ -27,5 +28,14 @@ public class fire : MonoBehaviour
     void Update()
     {
         
+    }
+
+    // taoj chuc nang vien dan dung lai
+
+    public void removeForce()
+    {
+        myBody.velocity = new Vector2(0, 0);
+        Destroy(fire01);
+
     }
 }
