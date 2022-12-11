@@ -186,5 +186,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9e3ae337a8491419aecbfb268050ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dame: 50
+  dame: 30
   bulletExplosion: {fileID: 6145338179827804656, guid: 854e4007fd51a8b478bfa524e72a0a99, type: 3}

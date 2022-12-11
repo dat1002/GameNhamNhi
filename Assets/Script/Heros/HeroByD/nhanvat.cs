@@ -13,7 +13,8 @@ public class nhanvat : MonoBehaviour
     private float nhaythap = 5; // asp dung khi nhan len 1 lan va buong phim
     private float roixuong = 10; // luc hap dan
     private bool quayphai = true; // kieerm tra xem nhan vat di huong nao
-
+    public float maxHealth = 100;
+    float currentHealth = 0;
     // khai báo các biến để bắn
     public Transform gunTip;
     public GameObject bullet;
@@ -30,6 +31,7 @@ public class nhanvat : MonoBehaviour
     {
         hd = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
+        currentHealth = hp;
     }
 
     // Update is called once per frame
@@ -130,5 +132,20 @@ public class nhanvat : MonoBehaviour
         {
             chamdat = true;
         }
+    }
+
+    // hàm gây dame cho nhân vật
+    public void addDamage(float dame)
+    {
+        currentHealth -= dame;
+        if (currentHealth <= 0)
+        {
+            makeDead();
+        }
+    }
+    // cái chết cho player
+    void makeDead()
+    {
+        Destroy(gameObject);
     }
 }
